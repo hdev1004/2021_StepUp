@@ -1,0 +1,228 @@
+*{
+    user-select: none;
+    -ms-user-select: none;
+    outline: 0;
+    margin:0;
+    padding:0;
+}
+
+html{
+    width:100%;
+    height:100%;
+}
+
+hr{
+    background-color: #d1d1d1;
+}
+
+.content{
+    flex: 1;
+    padding-top: 10px;
+    width:70%;
+    height:100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#logo{
+    text-align: center;
+}
+
+#text{
+    padding-top: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 0px;
+}
+
+.sidebar{
+    position:fixed;
+    width: 250px;
+    height: 100%;
+    left:0;
+    
+    }
+
+    ul{
+        list-style-type: none;
+        width:20%;
+        position:fixed;
+        height: 100%;
+        overflow: auto;
+    }
+    
+
+    
+nav ul{
+    top: 20.5em;
+    height:100%;
+    width:100%;
+    list-style:none;
+    }
+    
+    nav ul li{
+    line-height: 35px;
+    }
+    
+    
+    nav ul li a{
+    color:black;
+    text-decoration: none;
+    font-size:18px;
+    padding-left: 40px;
+    display: block;
+    width:100%;
+    
+    }
+    
+    nav ul li a:hover{
+        color:#BAA5A5;
+    }
+    
+    .bone{
+    padding-top: 15.5em;
+    padding-left: 5px;
+    position:absolute;
+    }
+    
+    .bone .t{
+    color: #fff;
+    top: 20.4em;
+    left: 87px;
+    position:absolute;
+    font-size: 14px;
+    }
+    
+    #title{
+        margin-top: 2em;
+        text-align: center;
+        font-size: 3em;
+    }
+
+    #tit_img{
+        padding-top: 4em;
+        padding-bottom: 4em;
+        text-align: center;
+    }
+
+    #text2{
+        line-height: 30px;
+    }
+
+    #subtitle{
+        padding-top: 5em;
+        padding-bottom: 30px;
+        color: #BAA5A5;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    #con{
+        padding-top: 100px;
+        line-height: 40px;
+    }
+
+    #con p{    
+        padding-top: 40px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    #con img{
+        width: 25%;
+        float: left;
+        clear:both;
+        margin-right: 50px;
+    }
+
+    #con2{
+        margin: 50px;
+        padding-top: 80px;
+        line-height: 40px;
+    }
+
+    #con2 p{    
+        padding-top: 4em;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    #con2 img{
+        width: 350px;
+        height: 320px;
+        float: right;
+        clear:both;
+     
+    }
+
+    #con3{
+        padding-top: 80px;
+        line-height: 40px;
+    }
+
+    #con3 p{    
+        padding-top: 120px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    #con3 img{
+        width: 30%;
+        float: left;
+        clear:both;
+        margin-right: 50px;
+    }
+
+    #con4_f{
+        padding-bottom: 35px;
+    }
+
+    #con4{
+        line-height: 35px;
+        padding-left: 30px;
+    }
+
+    #subtitle2{
+        padding-top: 35px;
+        padding-bottom: 35px;
+        color: #BAA5A5;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .subpic{
+        position:relative;
+    }
+
+    #btn{
+        top:68%;
+        right:12%;
+        z-index: 1;
+        position:absolute;
+        box-shadow: 3px 3px 3px #d1d1d1;
+        width: 13.75em;
+        height: 3.75em;
+        line-height: 3.75em;
+        text-align: center;
+        background: #BAA5A5;
+        border-radius: 30px;
+      }
+  
+      #btn a{
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+      }
+
+footer{
+    position:absolute;
+    width:100%;  background-color: #BAA5A5; 
+}
+footer .foot_inner {margin:auto; padding:40px 0; overflow: hidden;}
+footer .foot_inner .logo{margin-left:3.75em; float: left; clear:both; width:20%;}
+footer .foot_inner .contact_area { float: left;width:60%; }
+footer .foot_inner .contact_area p{ color:#fff; font-size: 18px;}
+footer .foot_inner .footer_right a{float:left;}
+
+#email {padding-right: 15px;}

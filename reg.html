@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/favicon.ico2" type="image/x-icon2">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Jquery/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/reg.css">
+    <title>Document</title>
+</head>
+<style>
+    li {
+      list-style-type: none;
+    }
+  
+  input[id="menuicon"] {
+    display: none;
+  }
+  
+  input[id="menuicon"] + label {
+    display: block;
+    width: 21px;
+    height: 21px;
+    z-index: 999999;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+  }
+  
+  input[id="menuicon"] + label span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 30px;
+    background-color: #000;
+    transition: all 0.4s;
+  }
+  
+  input[id="menuicon"] + label span:nth-child(1) {
+    top: 0;
+  }
+  
+  input[id="menuicon"] + label span:nth-child(2) {
+    bottom: 40%;
+  }
+  
+  input[id="menuicon"]:checked+label span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(45deg);
+  }
+  
+  input[id="menuicon"]:checked+label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(50%);
+    transform: rotate(-45deg);
+  }
+  
+  input[id="menuicon"]:checked+label+nav {
+    top: 0;
+  }
+  
+  div[class="sidemenu"]{
+    width:300px;
+    height:100%;
+    background:white;
+    position:fixed;
+    top:0;
+    right:-300px;
+    z-index:1;
+    transition:all .35s;
+  }
+  
+  input[id="menuicon"]:checked + label + div{
+    right:0;
+  }
+  
+  input[id="menuicon"]:checked+label{
+    z-index:2;
+    right:330px;
+    transition:all .35s;
+    cursor:pointer;
+  }
+  
+  .sidemenu_title{
+    padding-top:30px;
+    display:flex;
+    justify-content: center;
+    font-size: 20px;
+  }
+  
+  .sidemenu_link{
+    display: none;
+    padding-bottom : 30px;
+  }
+  
+  .sidemenu_button {
+      font-size: 19px;
+      padding: 30px 0;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+  
+    [id$="-toggle"] {
+      margin-right: 15px;
+    }
+  
+    .sidemenu_a{
+      line-height: 2;
+      padding-left: 20px;
+      animation: fadein 0.8s;
+    }
+  
+    a { text-decoration: none; color: black; }
+      a:visited { text-decoration: none; }
+      a:hover { text-decoration: none; }
+      a:focus { text-decoration: none; }
+      a:hover, a:active { text-decoration: none; }
+  
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    .sidemenu{
+      position: relative;
+    }
+  
+    .sidemenu_footer{
+      position:absolute;
+      bottom: 0;
+      left:50%;
+      transform: translateX(-50%);
+    }
+  
+  </style>
+<body>
+
+    <input type="checkbox" id="menuicon">  
+    <label for="menuicon">  
+      <span></span>  
+      <span></span>
+    </label>
+    <div class="sidemenu">
+      <div class="sidemenu_title">Contents</div>
+      <br>
+      <hr>
+      <div class="sidemenu_content">
+        <button class="sidemenu_button" id="btn-1"><span id="btn-1-toggle">+</span><span>동물 보호 시설</span></button>
+        <div class="sidemenu_link" id= "link-1">
+          <a href="#"><span class="sidemenu_a">- 습득 시 안내</span></a>
+          <br>
+          <a href="#"><span class="sidemenu_a">- 동물 병원 안내</span></a>
+        </div>
+      </div>
+      <div class="sidemenu_content">
+        <button class="sidemenu_button" id="btn-2"><span id="btn-2-toggle">+</span><span>분양 절차</span></button>
+        <div class="sidemenu_link" id="link-2">
+          <a href="#"><span class="sidemenu_a">- 자가 진단</span></a>
+          <br>
+          <a href="#"><span class="sidemenu_a">- 건강 검진</span></a>
+          <br>
+          <a href="#"><span class="sidemenu_a">- 동물 등록</span></a>
+        </div>
+        
+      </div>
+      <div class="sidemenu_content">
+        <button class="sidemenu_button" id="btn-3"><span id="btn-3-toggle">+</span><span>동물 보호 시설</span></button>
+        <div class="sidemenu_link" id="link-3">
+          <a href="#"><span class="sidemenu_a">- 강아지 장점 소개</span></a>
+          <br>
+          <a href="#"><span class="sidemenu_a">- 강아지 교육</span></a>
+          <br>
+          <a href="#"><span class="sidemenu_a">- 강아지와 교감</span></a>
+        </div>
+      
+      </div>
+      <div class="sidemenu_footer">
+        <span>MBCOE</span>
+        <br>
+        <br>
+      </div>
+    </div>
+
+<script>
+const items = document.querySelectorAll('.sidemenu_button');
+
+function openCloseToggle(){
+  const a = this.id.replace('btn', 'link');
+
+  if(document.getElementById(a).style.display === 'block'){
+    document.getElementById(a).style.display = 'none';
+    document.getElementById(this.id + '-toggle').textContent = '+';
+  } else{
+    document.getElementById(a).style.display = 'block';
+    document.getElementById(this.id + '-toggle').textContent = '-';
+  }
+}
+
+items.forEach(item => item.addEventListener('click', openCloseToggle));
+
+function resizeApply() {  //창 크기
+      var minWidth = 1700; 
+      var body = document.getElementsByTagName('body')[0]; 
+      if (window.innerWidth < minWidth) { body.style.zoom = (window.innerWidth / minWidth); } 
+      else body.style.zoom = 1; } 
+      window.onload = function() { 
+        window.addEventListener('resize', function() { 
+          resizeApply(); 
+        }); 
+      }; resizeApply();
+    
+</script>
+
+        <!-- <nav class="sidebar">
+            <div class="bone">
+                <img src="/Img/bone.png" width="200px" height="130px" />
+                 <div class="t">
+                     <p>menu</p>
+                </div>
+            </div>
+            
+            <ul>
+                <li><a href="#">반려동물 등록제</a></li>
+            </ul>
+
+        </nav> -->
+  
+
+    <div class="content">
+        <div id="logo">
+            <img src="/Img/logo.png" />
+        </div>
+        <div id="text">반려동물 등록제</div> 
+        <br><hr>
+
+        <div id="title">
+            <p style="display:inline-block; color: #C89595">동물등록</p> 
+            <p style="display:inline-block; ">하셨나요?</p>
+        </div>
+        <div id="tit_img"><img  src="/Img/reg_title.png" width="50%" height="50%"/></div>
+        <div id="text2">
+            반려동물등록제란 유기동물이 늘어나는 문제를 해결하기 위해 키우는 반려동물을 의무적으로 내가 거주하는 시, 군을 제외한 전국에서 의무적으로 등록하는 것을
+말하며, 관리시스템 상 동물등록 정보를 통해 소유자를 쉽게 찾을 수 있도록 하는 시행제도 입니다.
+        </div>
+
+        <div id="subtitle">반려동물 등록 방법</div>
+        <div id="text2">
+            시,군,구청 이나 동물병원, 동물보호단체, 동물보호센터에서 접수하시면 됩니다. 시,군,구청에서는 등록번호와 소유자 인적사항을 등록하고 동물등록증을 발급해줍니다.
+<br>동물병원에서는 마이크로칩 시술이나 외장형 무선식별장치를 부착합니다.
+        </div>
+     
+        <div id="con">
+            <img src="/Img/reg_con.png" />
+            <p>내장 마이크로칩</p>
+            <span>내장마이크로칩은 쌀알이랑 비슷한 정도의 크기 입니다. 피부 아래에 내장칩을 삽입하여
+수동 RFID 기술을 활용하여 <br>정보를 스캔할 수 있습니다.<br>
+칩의 수명은 25년 정도이며, 일반적인 강아지 수명보다 길기 때문에 배터리를 교체할
+필요가 없습니다.<br>
+전화번호나 주소가 변경될 경우 등록 사이트에서 수정해야 합니다. </span>
+        </div>
+     
+        <div id="con2">
+            <img src="/Img/reg_con2.png" />
+            <p>외장 마이크로칩</p>
+           스캐너로 반려인과 반려견의 정보를 파악할 수 있으며, 인식표처럼 외부에 착용 시킵니다.<br>
+외장 마이크로 칩은 반려견에게 고통을 주지 않을 수 있다는 장점이 있지만, 
+분실 및 훼손될 수 있습니다. <br>마이크로 칩은 1개만 생산되기 때문에 잃어버리거나 파손될
+경우 다시 구매할 수 없습니다. 
+       
+        </div>
+
+
+        <div id="con3">
+            <img src="/Img/reg_con3.png">
+            <p>인식표</p>
+            인식표는 동물등록번호와 연락처 등 반려인의 인적사항이 기재되며 목걸이처럼 착용시킵니다.<br>
+반려견과 외출 시 꼭 인식표와 같이 외출해야 합니다.<br>
+미 착용 시 벌금이 부여됩니다.
+        </div>
+       
+       
+
+        <div id="subtitle">반려동물 미등록 과태료</div>
+        <p id="con4_f">기간 안에 반려동물 등록을 하지 않을 경우 100만원 이하, 변경신고를 이행하지 않을 경우 50만원 이하의 과태료가 부과됩니다.</p>
+       
+        <div id="con4">
+            
+        <p> ▶ 1차 적발시 20만원</p>
+        <p> ▶ 2차 적발시 40만원</p>
+        <p> ▶ 3차 적발시 60만원</p>
+        </div>
+
+        <div id="subtitle2">동물등록 변경사항 미신고 과태료</div>
+        <div id="con4">     
+            <p> ▶ 1차 적발시 5만원</p>
+            <p> ▶ 2차 적발시 10만원</p>
+            <p> ▶ 3차 적발시 20만원</p>
+         </div>
+
+         
+            <div class="subpic"><img src="/Img/reg_con4.png" width="80%"/>
+                <span id="btn"><a href="#">동물 병원 찾기</a></span>
+            </div>
+    </div>
+
+    <footer>
+        <div class="foot_inner">
+            <h2 class="logo"><img src="/Img/logo_white.png" width="145px" height="48px"/></h2>
+            <div class="contact_area">
+                
+                  <p class="address">02345 서울특별시 서대문구 가좌로 134(서울특별시 서대문구 홍은 2동 356-1) 대표전화 : 000-0000</p>
+                  <p class="mail">Copyright by Animal Plant Quarantine Agency. All Rights Reserved.</p>
+                
+            </div>
+            <div class="footer_right">
+                    <a href="#"><img src="/Img/email.png" width="54px" height="54px" id="email"/></a>
+                    <a href="#"><img src="/Img/twt.png" width="54px" height="54px"/></a>
+                    <a href="#"><img src="/Img/facebook.png" width="54px" height="54px" /></a>
+                    <a href="#"><img src="/Img/insta.png" width="54px" height="54px"/></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
