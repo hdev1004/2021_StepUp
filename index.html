@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div.img {
+            text-align: center;
+        }
+
+        .t1 {
+            display: inline-flex;
+            overflow: hidden;
+            letter-spacing: -1em;
+            transition: 0.8s ease-in-out;
+        }
+        .t2 {
+            height: 0px;
+            text-align: center;
+            overflow: hidden;
+            transition: 0.8s ease-in-out 0.2s;
+        }
+
+        img {
+            width: 400px;
+            height: 400px;
+            transition: 0.8s ease-in-out;
+        }
+        
+
+        .img:hover .t1 {
+            letter-spacing: 0;
+        }
+
+        .img:hover .t2 {
+            height: 50px;
+        }
+        .img:hover img {
+            width: 200px;
+            height: 200px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="img" style="width: 100%; height: 500px; margin-top: 200px;">
+        <span class="t1" style="position: relative; font-size: 140px; font-family: 'Verdana'; left: 30px;">MBC</span>
+        <img style="position: relative; top: 50px;" src="img/발바닥.png" width="200px" height="200px">
+        <span class="t1" style="position: relative; font-size: 140px; font-family: 'Verdana'; left: -30px;">E</span>
+        <p class="t2" style="position: relative; font-size: 45px; top:-40px; font-family: 'Verdana'; color: #707070;">BE THE CYNOSURE OF ALL EYES</p>
+    </div>
+
+</body>
+</html>
