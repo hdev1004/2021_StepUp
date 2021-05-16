@@ -11,7 +11,7 @@
     position:fixed;
     width:100vw;
     height:100vh;
-    background-image: url('/Img/foot2.png');
+    background-image: url('/StepUp_ver_0/Img/foot2.png');
     opacity: 0.6;
     z-index: -1;
     background-repeat: no-repeat;
@@ -124,9 +124,7 @@ width:100%;
 nav ul li a:hover{
     color:#BAA5A5;
 }
-/* nav ul li a.active{
-color:#BAA5A5;
-} */
+
 
 .bone{
 padding-top: 15.5em;

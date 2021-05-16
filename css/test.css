@@ -1,0 +1,59 @@
+*{
+    user-select: none;
+    -ms-user-select: none;
+    outline: 0;
+    margin:0;
+    padding:0;
+}
+
+
+html{
+    width:100%;
+    height:100%;
+}
+
+
+body{
+    background-repeat: no-repeat;
+    background-image: url('/StepUp_ver_0/Img/test_bg.jpg');
+}
+
+#btn{
+    position:absolute;
+    box-shadow: 3px 3px 3px #d1d1d1;
+    width: 240px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #fff;
+    border-radius: 30px;
+  }
+
+  #btn a{
+    font-size: 18px;
+    font-weight: bold;
+    color: #969696;
+    text-decoration: none;
+  }
+
+  .total{
+    width: 100%; 
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .total p{
+      font-size: 22px;
+      position: relative;
+      bottom : 3em;
+      color: #fff;
+  }
+
+#logo{
+    padding-top: 3em;
+    position : absolute;
+    left: 50%;
+    margin-left: -87.5px;
+}
