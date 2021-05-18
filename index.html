@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="JS/jquery-3.6.0.js"></script>
     <title>Document</title>
 
     <style>
@@ -34,7 +35,6 @@
             height: 400px;
             transition: 0.8s ease-in-out;
         }
-        
 
         .img:hover .t1 {
             letter-spacing: 0;
@@ -47,14 +47,29 @@
             width: 200px;
             height: 200px;
         }
-
         
     </style>
+
+
+    <script>
+    $(function() {
+        var timer;
+        var delay = 3000;
+        $(".img").hover(function() {
+            timer = setTimeout(function() {
+                location.href = "giveThemLove.html";
+            }, delay);
+        }, function() {
+            clearTimeout(timer);
+        });
+    });
+
+    </script>
 </head>
 <body>
     <div class="img" style="width: 100%; height: 500px; margin-top: 200px;">
         <span class="t1" style="position: relative; font-size: 140px; font-family: 'Verdana'; left: 30px;">MBC</span>
-        <img style="position: relative; top: 50px;" src="img/발바닥.png" width="200px" height="200px">
+        <img style="position: relative; top: 50px;" src="Img/발바닥.png" width="200px" height="200px">
         <span class="t1" style="position: relative; font-size: 140px; font-family: 'Verdana'; left: -30px;">E</span>
         <p class="t2" style="position: relative; font-size: 45px; top:-40px; font-family: 'Verdana'; color: #707070;">BE THE CYNOSURE OF ALL EYES</p>
     </div>
