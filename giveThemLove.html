@@ -4,18 +4,171 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="JS/jquery-3.6.0.js"></script>    
+    <script src="JS/chart.min.js"></script>
+    <script src="JS/count.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="css/count.css">
+    <link rel="stylesheet" href="test/test2.css">
+    <link rel="stylesheet" href="css/giveThem.css">
+    <link href="Img/발바닥.ico" rel="shortcut icon" type="image/x-icon">
     <title>Document</title>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-        }
+    .sole {
+        transform: rotate(135deg);
+    }
+    
+    .box {
+        position: relative;
+        top: 0px;
+    }
+    .grayBox {
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        background-color: #E3E3E3;
+    }
+
+    .pinkBox {
+        position: absolute;
+        top: 500px;
+        right: 0px;
+        width: 1000px;
+        height: 150px;
+        background-color: #CFC0C0;
+    }
+
+    .graphBox {
+        z-index: 10;
+        position: absolute;
+        top: 100px;
+        left: 250px;
+        width: 700px;
+        height: 500px;
+        border: 1px solid gray;
+        background-color: #e2e2e2;
+    }
+
     </style>
+
+    <script>
+        $(function() {
+        });
+    </script>
 </head>
 
 <body>
-    <img src="Img/giveThemLove_Dog.jpg" width="50%" height="100%">
+    <div id="one">
+        <img class="dogImg" src="Img/giveThemLove_Dog.jpg" style="opacity: 0.7;">
+        <div id="txtA">
+            <p class="t1">Give Them Love.</p>
+            <p class="t2">Animals are such agreeable friends.</p>
+        </div>
+
+        <section id="section10" class="demo">
+            <a id="moveOne" href="#one"></a>
+            <a id="moveTwo" href="#two"><span></span></a>
+            <a id="moveThree" href="#three"></a>
+          </section>
+    </div>
+
+    <div id="two">
+        <div class="box">
+            <div class="grayBox"></div>
+            <div class="pinkBox">
+                <div style="position: absolute;" class="number">2016</div>
+                <div style="position: absolute;" class="number">2017</div>
+                <div style="position: absolute;" class="number">2018</div>
+                <div style="position: absolute;" class="number">2019</div>
+                <div style="position: absolute;" class="number">2020</div>
+            </div>
+            <div class="graphBox" style="padding-left: 50px; padding-right: 50px;">
+                <canvas id="myChart" style="position: relative; top: 120px;"></canvas>
+            </div>
+        </div>
+
+        <div id="txtB">
+            <b class="t3">개는 물건이 아닌 생명입니다.</b>
+            <p class="t4">매년 10만마리 이상의 유기견들이 버려집니다.</p>
+            <p class="t5">이 중 20% 미만이 새로운 보호자를 만나고,</p>
+            <p class="t6">20일 안에 입양을 보내지 못하면 안락사를 당합니다.</p>
+        </div>
+    </div>
+
+
+    <script>
+        /* Charts */
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['2016', '2017', '2018', '2019', '2020'],
+                datasets: [{
+                    label: 'Total abandoned animals 2016-2020',
+                    data: [85350, 100531, 119040, 136014, 129205],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+        /* Charts */
+
+
+        $(function() {
+            var scrollFlag = false;
+            $('html, body').on('scroll touchmove mousewheel', function(e) {
+                var delta = e.originalEvent.deltaY;
+
+                var loc = $(window).scrollTop();
+                console.log(loc);
+
+                if(delta > 0) { //down
+                    if(loc >= 0 && loc < 970) {
+                        if(!$("html, body").is(":animated")) {
+                            //멈췄을 때 스크롤
+                            $('#moveTwo').click();
+                            $('html, body').scrollTop = 970;
+                        }
+                    }
+                } else { // up
+                    if(loc >= 940 && loc < 1939) {
+                        if(!$("html, body").is(":animated")) {
+                            //멈췄을 때 스크롤
+                            $('#moveOne').click();
+                            $('html, body').scrollTop = 1939;
+                        }
+                    }
+                }
+                
+            });
+
+            $('a').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 1000, 'swing');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "SeoulNamsan";
+  src: url("../fonts/서울남산\ 장체L.ttf") format("truetype");
+}
+b {
+  font-family: "SeoulNamsan";
+}
+
+body > div {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.dogImg {
+  width: 960px;
+  height: 100vh;
+}
+
+#txtA {
+  position: absolute;
+  top: 320px;
+  left: 1100px;
+}
+.t1 {
+  position: relative;
+  text-align: center;
+  font-family: "Verdana";
+  font-size: 80px;
+}
+.t2 {
+  position: relative;
+  text-align: center;
+  font-family: "Segoe UI";
+  font-size: 30px;
+  top: -50px;
+  letter-spacing: 0.35px;
+  color: #6e6e6e;
+}
+
+#txtB {
+  position: relative;
+  padding-top: 500px;
+}
+.t3 {
+  z-index: 13;
+  position: relative;
+  top: -350px;
+  left: 950px;
+  font-size: 60px;
+}
+.t4 {
+  position: relative;
+  top: 130px;
+  left: 300px;
+  font-size: 30px;
+  color: #6e6e6e;
+}
+
+.t5 {
+  position: relative;
+  top: 110px;
+  left: 300px;
+  font-size: 30px;
+  color: #6e6e6e;
+}
+
+.t6 {
+  position: relative;
+  top: 90px;
+  left: 300px;
+  font-size: 30px;
+  color: #6e6e6e;
+}
