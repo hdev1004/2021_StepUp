@@ -5,7 +5,7 @@ window.onload = function(){
   function dogShow(){
   
     setTimeout(function(){
-        document.getElementById('dog').src = '/StepUp_ver_0/Img/dog_stop.png';
+        document.getElementById('dog').src = 'Img/dog_stop.png';
     },9500);
   
   }
