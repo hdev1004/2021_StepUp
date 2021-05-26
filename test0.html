@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="JS/jquery-3.6.0.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/place.css">
+    <script src="/Jquery/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/test0.css">
     <title>Document</title>
 </head>
 <style>
@@ -209,38 +209,71 @@ function openCloseToggle(){
 }
 
 items.forEach(item => item.addEventListener('click', openCloseToggle));
- 
-</script>
-        <script type="module" src="JS/place.js"></script>
-   
 
-        <div class="bg-image"></div>
+function resizeApply() {  //창 크기
+      var minWidth = 1900; 
+      var body = document.getElementsByTagName('body')[0]; 
+      if (window.innerWidth < minWidth) { body.style.zoom = (window.innerWidth / minWidth); } 
+      else body.style.zoom = 1; } 
+      window.onload = function() { 
+        window.addEventListener('resize', function() { 
+          resizeApply(); 
+        }); 
+      }; resizeApply();
+    
+</script>
+
+     
+  
 
     <div class="content">
         <div id="logo">
-            <img src="Img/logo.png" />
+            <a href="test.html"> <img src="Img/logo.png" /></a>
         </div>
-        <div id="text">유기견 발견 시 안내</div> 
+        <div id="text">반려동물 면허증</div> 
         <br><hr>
-        <div class="text2">
-            <p style="display:inline-block;">유기견 발견 시 바로</p> 
-            <p style="display:inline-block; color: #BAA5A5;">신고 </p>
-            <p style="display:inline-block;">하세요</p>
-        </div> 
 
-        <div class="dog_b">
-            <img src="Img/dog.gif"  width="400" height="400" alt="" id="dog"/>
+        <div class="box1">
+            <p id="f">'당신은 반려동물을 키울 자격이 있나요?'</p>
+반려인이 반려견에 대한 지식을 충분히 알고 있고, 반려견을 통제할 수 있으며, 반려견을 함께 하면서 사람과 다른 동물에게 피해를 입지 않도록 증명하는 자격증 입니다.<br>
+반려견을 입양하기 전에 갖고 있어야하는 자격증이므로, 취득한 후 반려견을 입양할 수 있습니다.
         </div>
 
-        <div class="text3">
-            <p>공공장소를 떠돌거나 버려진 동물을 발견한 경우 관할 시 · 군 · 구청과 해당 유기동물 보호시설에 신고해야 합니다.</p><br>
-            <p>유기동물을 주인 없는 동물이라 여겨 마음대로 잡아서 팔거나 죽이면 2년 이하의 징역 또는 2천만원 이하의 벌금을 내게 됩니다.</p><br>
-            <p>시장 · 군수 · 구청장은 관내에서 발견된 유기동물들이 보호받을 수 있도록 필요한 조치를 해야 하며, 주인을 찾을 수 있도록 그 사실을 7일 이상 공고해야 합니다.</p><br>
-            <p>공고 후 10일이 지나도 주인을 찾지 못한 경우, 시 · 군 · 구청이 동물의 소유권을 갖게 되어 개인에게 기증하거나 분양할 수 있습니다.</p><br>
+        <div class="box2">
+            <p id="f">반려동물 면허증 시험 유의사항</p>
+            <p style="display: inline-block;">시험 시간은</p>
+            <p style="display:inline-block; color: #E98383;">1시간</p>
+            <p style="display:inline-block;">이며, 주어진 시간 내에 모든 문제를 풀어야 합니다.</p>
+            <p style="display:inline-block; color: #E98383;"> 60점 이상 맞을 시, 합격</p>
+            <p style="display:inline-block;"> 이며 그 미만은 불합격입니다. </p><br>
+            <p style="display: inline-block;">또한 문제 암기를 방지하기 위해 시험은</p>
+            <p style="display:inline-block; color: #E98383;">3달에 한 번</p>
+            <p style="display: inline-block;">  볼 수 있습니다.</p>           
         </div>
-    </div>
 
     </div>
 
+    <div class="next">
+     <a href="test.html"><img src="Img/next.png" width="100px" height="100px"></a> 
+    </div>
+       
+    <footer>
+        <div class="foot_inner">
+            <h2 class="logo"><img src="Img/logo_white.png" width="145px" height="48px"/></h2>
+            <div class="contact_area">
+                
+                  <p class="address">02345 서울특별시 서대문구 가좌로 134(서울특별시 서대문구 홍은 2동 356-1) 대표전화 : 000-0000</p>
+                  <p class="mail">Copyright by Animal Plant Quarantine Agency. All Rights Reserved.</p>
+                
+            </div>
+            <div class="footer_right">
+                    <a href="#"><img src="Img/email.png" width="54px" height="54px" id="email"/></a>
+                    <a href="#"><img src="Img/twt.png" width="54px" height="54px"/></a>
+                    <a href="#"><img src="Img/facebook.png" width="54px" height="54px" /></a>
+                    <a href="#"><img src="Img/insta.png" width="54px" height="54px"/></a>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
