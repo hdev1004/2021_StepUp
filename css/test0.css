@@ -1,0 +1,68 @@
+*{
+    user-select: none;
+    -ms-user-select: none;
+    outline: 0;
+    margin:0;
+    padding:0;
+}
+
+html{
+    width:100%;
+    height:100%;
+}
+
+hr{
+    background-color: #d1d1d1;
+}
+
+.content{
+    flex: 1;
+    padding-top: 10px;
+    width:70%;
+    height:100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#logo{
+    text-align: center;
+}
+
+#text{
+    padding-top: 35px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+
+footer{
+    bottom : 0;
+    position:absolute;
+    width:100%;  background-color: #BAA5A5; 
+}
+footer .foot_inner {margin:auto; padding:40px 0; overflow: hidden;}
+footer .foot_inner .logo{margin-left:3.75em; float: left; clear:both; width:20%;}
+footer .foot_inner .contact_area { float: left;width:60%; }
+footer .foot_inner .contact_area p{ color:#fff; font-size: 18px;}
+footer .foot_inner .footer_right a{float:left;}
+
+#email {padding-right: 15px;}
+
+.box1{
+    margin-top : 3em; border:1px solid; padding:25px; line-height: 35px; font-size: 17px; color:#585858; font-weight: bold;
+}
+
+
+.box2{
+    margin-top : 2em;
+    border:1px solid; padding:10px;
+    padding:25px; line-height: 35px; font-size: 17px; color:#585858; font-weight: bold;
+}
+
+#f{
+    font-size: 20px;
+    color: #585858;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
