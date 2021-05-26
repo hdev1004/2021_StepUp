@@ -10,7 +10,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="css/count.css">
-    <link rel="stylesheet" href="test/test2.css">
+    <link rel="stylesheet" href="test/scroll.css">
     <link rel="stylesheet" href="css/giveThem.css">
     <link href="Img/발바닥.ico" rel="shortcut icon" type="image/x-icon">
     <title>Document</title>
@@ -33,8 +33,8 @@
 
     .pinkBox {
         position: absolute;
-        top: 500px;
-        right: 0px;
+        top: 490px;
+        left: 910px;
         width: 1000px;
         height: 150px;
         background-color: #CFC0C0;
@@ -51,25 +51,45 @@
         background-color: #e2e2e2;
     }
 
+    .img_container {
+        position: absolute;
+        margin-top: 0px;
+        z-index: 1000;
+        width: 200px; 
+        height: 200px; 
+        border-radius: 100px; 
+        background-color: white; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        box-shadow: 10px 10px 20px lightgray;
+    }
+
+    .txt_container {
+        width: 270px;
+        position: absolute;
+        text-align: center;
+    }
     </style>
 
     <script>
         $(function() {
+                            
         });
     </script>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
     <div id="one">
         <img class="dogImg" src="Img/giveThemLove_Dog.jpg" style="opacity: 0.7;">
         <div id="txtA">
-            <p class="t1">Give Them Love.</p>
-            <p class="t2">Animals are such agreeable friends.</p>
+            <p class="t1">Give Them Love. </p>
+            <p class="t2">Animals are such agreeable friends. </p>
         </div>
 
         <section id="section10" class="demo">
             <a id="moveOne" href="#one"></a>
-            <a id="moveTwo" href="#two"><span></span></a>
+            <a id="moveTwo" href="#two"><span style="left: 500px;"></span></a>
             <a id="moveThree" href="#three"></a>
           </section>
     </div>
@@ -78,11 +98,18 @@
         <div class="box">
             <div class="grayBox"></div>
             <div class="pinkBox">
-                <div style="position: absolute;" class="number">2016</div>
-                <div style="position: absolute;" class="number">2017</div>
-                <div style="position: absolute;" class="number">2018</div>
-                <div style="position: absolute;" class="number">2019</div>
-                <div style="position: absolute;" class="number">2020</div>
+                <div style="position: absolute; left: 200px; top: 40px;" class="number">2016</div>
+                <div style="position: absolute; left: 350px; top: 30px;" class="number">2017</div>
+                <div style="position: absolute; left: 500px; top: 30px;" class="number">2018</div>
+                <div style="position: absolute; left: 650px; top: 30px;" class="number">2019</div>
+                <div style="position: absolute; left: 800px; top: 30px;" class="number">2020</div>
+
+                <div style="position: absolute; left: 190px; top: 80px; color: white;" class="number">88,531</div>
+                <div style="position: absolute; left: 335px; top: 80px; color: white;" class="number">100,840</div>
+                <div style="position: absolute; left: 485px; top: 80px; color: white;" class="number">118,710</div>
+                <div style="position: absolute; left: 635px; top: 80px; color: white;" class="number">133,504</div>
+                <div style="position: absolute; left: 785px; top: 80px; color: white;" class="number">128,719</div>
+                
             </div>
             <div class="graphBox" style="padding-left: 50px; padding-right: 50px;">
                 <canvas id="myChart" style="position: relative; top: 120px;"></canvas>
@@ -95,19 +122,75 @@
             <p class="t5">이 중 20% 미만이 새로운 보호자를 만나고,</p>
             <p class="t6">20일 안에 입양을 보내지 못하면 안락사를 당합니다.</p>
         </div>
+
     </div>
 
+
+    <div id="three">
+        <img src="Img/giveThemLove_Dog2.jpg" style="z-index: 10;" width="100%" height="50%">
+
+        <div style="position: relative;">
+            <div class="img_container" style="top: -170px; left: 20%;">
+                <img src="Img/dogShelter1.png" width="50%" height="50%">
+            </div>
+            <div class="txt_container" style="top: 60px; left: 20%; margin-left: -30px;">
+                <p>유기견 보호소</p>
+                <span>
+                    유기견에 대한 정보를 알려주고, 유기견 발견 시 안내 사항과 가까운 동물병원을 찾아볼 수 있습니다.
+                <span>
+            </div>
+    
+            <div class="img_container" style="top: -170px; left: 45%;">
+                <img src="Img/dogBook1.png" width="50%" height="50%">
+            </div>
+            <div class="txt_container" style="top: 60px; left: 45%; margin-left: -30px;">
+                <p>입양 절차</p>
+                <span>
+                    유기견의 입양 절차를 안내하고, 유기견을 입양하기 위한 반려동물 자격증 시스템이 있습니다.
+                </span>
+            </div>
+    
+            <div class="img_container" style="top: -170px; left: 70%;">
+                <img src="Img/Adoption1.png" width="50%" height="50%">
+            </div>
+            <div class="txt_container" style="top: 60px; left: 70%; margin-left: -30px;">
+                <p>
+                    강아지 북
+                </p>
+                <span>
+                    반려동물을 키우기 위해 필요한 정보들을 볼 수 있습니다.
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="four" style="background-color: #E3E3E3;">
+        <p>나를 버리지 말아주세요.</p>
+        <hr>
+
+        <span>우리는 이미 한 번 이상 상처를 입은 존재입니다.<br>무책임한 사람들의 단순 변심으로 인해 우리들은 늘어나고 있습니다.<br>사랑으로 치유해주세요. 우리는 기쁨과 슬픔이란 감정을 느낍니다.<br>사지말고, 입양하세요. 사랑해주세요.</span>
+        <br>
+        <br>
+        <span>Please don't abandon me.<br>We've already been hurt more than once.<br>We are increasing because of the simple change of heart of irresponsible people..<br>Please heal us with love. We feel the feeling of joy and sadness.<br>Don't buy it, adopt it. Please love us.</span>
+    
+        <video controls autoplay width="500" muted loop>
+            <source src="video/video.mp4"
+                    type="video/mp4">
+    </div>
 
     <script>
         /* Charts */
         var ctx = document.getElementById('myChart');
-        var myChart = new Chart(ctx, {
-            type: 'line',
+        makeChart('line');
+        function makeChart(type) {
+            var myChart = new Chart(ctx, {
+            type: type,
             data: {
                 labels: ['2016', '2017', '2018', '2019', '2020'],
                 datasets: [{
                     label: 'Total abandoned animals 2016-2020',
-                    data: [85350, 100531, 119040, 136014, 129205],
+                    data: [88531, 100840, 118710, 133504, 128719],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -133,6 +216,8 @@
                 }
             }
         });
+        }
+        
         /* Charts */
 
 
@@ -148,16 +233,26 @@
                     if(loc >= 0 && loc < 970) {
                         if(!$("html, body").is(":animated")) {
                             //멈췄을 때 스크롤
-                            $('#moveTwo').click();
-                            $('html, body').scrollTop = 970;
+                            //$('#moveTwo').click();
+
+                            setTimeout(function() {
+                                for(var i = 0; i < 10; i ++) {
+                                //$('.number').eq(i).text($('.number').eq(i).attr('data-number'));
+                                //Counter($('.number').eq(i));
+                            }
+                            }, 800);
+                           
                         }
                     }
                 } else { // up
                     if(loc >= 940 && loc < 1939) {
                         if(!$("html, body").is(":animated")) {
                             //멈췄을 때 스크롤
-                            $('#moveOne').click();
-                            $('html, body').scrollTop = 1939;
+                            for(var i = 0; i < 10; i ++) {
+                                //$('.number').eq(i).text($('.number').eq(i).attr('data-number'));
+                                //Stop_Counter($('.number').eq(i));
+                            }
+                            //$('#moveOne').click();
                         }
                     }
                 }
