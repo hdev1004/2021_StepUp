@@ -1,0 +1,104 @@
+<html>
+<head>
+<style>
+   a {   text-decoration: none; color:black; }
+   a:hover { color:blue;}
+</style>
+<script language="javascript">
+var delay=10; //시간설정
+var correctAnswers=new Array("라","가","가","라");  //정답
+
+var q_num=1;
+var timer;
+var layer;
+var clock=delay;
+var score=0;
+
+function show_question(){
+   if (layer=eval("document.all.question"+q_num)){
+      layer.style.display="inline";
+      document.all.timeLeft.innerHTML=clock;
+      hide_question();
+   } else {
+      document.all.timeLeft.innerHTML=0;
+      document.all.quizScore.innerHTML="당신은 "+(q_num-1)+"문제중 "+score+"개를 맞췄습니다.";
+      document.all.quizScore.style.display="inline";
+   }
+}
+
+function hide_question(){
+   if (clock>0) {
+      document.all.timeLeft.innerHTML=clock;
+      clock--;
+      timer=setTimeout("hide_question()",1000);
+   } else {
+      clearTimeout(timer);
+      document.all.answerBoard.innerHTML=" ";
+      clock=delay;
+      layer.style.display="none";
+      q_num++;
+      show_question();
+   }
+}
+
+function check_answer(answer){
+   if (correctAnswers[q_num-1]==answer){
+      score++;
+      document.all.answerBoard.innerHTML="<font color=blue><b>정답입니다.</b></font>";
+   } else {
+      document.all.answerBoard.innerHTML="<font color=red><b>땡! 틀렸습니다.</b></font>";
+   }
+   clock=0;
+   clearTimeout(timer);
+   timer=setTimeout("hide_question()",700);
+}
+
+window.onload=show_question;
+</script>
+</head>
+
+<body>
+
+제한시간 : <B><span id="timeLeft"></span></B> 초<br>
+<br>
+<div id="answerBoard"> </div>
+<br>
+
+<div id="question1" style="display:none">
+   <b>1. 여름철 고온에서는 특히 무엇을 유념해야 하는가?</b><br>
+   <a href="javascript:void(0)" onclick="check_answer('가')">가) 더운 날씨는 하루 종일 산책하기에 좋다.</a><br>
+   <a href="javascript:void(0)" onclick="check_answer('나')">나) 털이 짧은 개는 아무것도 유의할 필요가 없지만, 털이 긴 개는 한 여름에 하루 최대 3시간만 산책 시킨다.</a><br>
+   <a href="javascript:void(0)" onclick="check_answer('다')">다) 털이 짧은 개는 화상을 피하기 위해 자외선 차단제를 발라줘야 한다.</a><br>
+   <a href="javascript:void(0)" onclick="check_answer('라')">라) 한여름에 주차된 차에 개를 혼자 남겨 두면 안 된다.</a><br>
+</div>
+
+<div id="question2" style="display:none">
+<b>2. 개 먹이와 관련해서 무엇을 유념해야 하는가?</b><br>
+<a href="javascript:void(0)" onclick="check_answer('가')">가) 연령에 적합한 사료의 제공이 권장된다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('나')">나) 개는 항상 자신의 그릇에 사료를 먹어야 한다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('다')">다) 특히 몸집이 큰 품종의 강아지는 항상 배부르게 먹을 수 있어야 한다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('라')">라) 개는 신선한 생고기를 주로 먹어야 한다.</a><br>
+</div>
+
+<div id="question3" style="display:none">
+<b>3. 사육에 적합한 환경에서 개는 무엇이 매일 충족되어야 하는가?</b><br>
+<a href="javascript:void(0)" onclick="check_answer('가')">가) 개는 매일 몇 시간 동안 정신적, 육체적인 활동이 필요하다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('나')">나) 개는 매일 두세 시간씩 최소 두 번 걸어야 한다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('다')">다) 개는 매일 적 어도 두 끼의 식사를 제공받아야 한다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('라')">라) 개는 주로 견고한 바닥을 가진 견사 안에서 길러져야 한다.</a><br>
+</div>
+
+<div id="question4" style="display:none">
+<b>4. 개와 함께 자전거 여행을 하고 싶다면 권장되는 조치는 무엇인가?</b><br>
+<a href="javascript:void(0)" onclick="check_answer('가')">가) 개가 큰 반경에서 걸을 수 있도록 줄을 최대한 길게 묶어줘야 한다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('나')">나) 개의 발이 다치지 않도록 특별한 운동화를 착용시켜야 한다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('다')">다) 응급상황 시 빨리 잡아챌 수 있도록 줄은 자전거 핸들에 묶어야 한다.</a><br>
+<a href="javascript:void(0)" onclick="check_answer('라')">라) 개가 자전거와 함께 걷기 위한 체력과 운동신경이 발달되도록 적절히 훈련 시켜야 한다.</a><br>
+</div>
+
+
+<div id="quizScore" style="display:none">
+</div>
+
+</body>
+</html>
