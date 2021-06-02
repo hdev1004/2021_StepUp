@@ -16,6 +16,11 @@
     <title>Document</title>
 
     <style>
+    .title {
+        font-weight: bold; 
+        font-size: 23px;
+    }
+
     .sole {
         transform: rotate(135deg);
     }
@@ -51,25 +56,73 @@
         background-color: #e2e2e2;
     }
 
+    .txt_container {
+        width: 270px;
+        position: absolute;
+        text-align: center;
+    }
+
+
     .img_container {
         position: absolute;
         margin-top: 0px;
         z-index: 1000;
         width: 200px; 
         height: 200px; 
+    }
+    .theCard {
+        box-shadow: 5px 5px 10px lightgray;
         border-radius: 100px; 
-        background-color: white; 
-        display: flex; 
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        transform-style: preserve-3d;
+        transition: all 0.5s ease;
+
         justify-content: center; 
         align-items: center;
-        box-shadow: 5px 5px 10px lightgray;
+    }
+    .theCard:hover {
+        transform: rotateY(180deg);
+    }
+    .theFront {
+        margin-left: 50px;
+        margin-top: 35px;
+
+        display: flex;
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        backface-visibility: hidden;
     }
 
-    .txt_container {
-        width: 270px;
+    .theBack {
+        margin-left: 50px;
+        margin-top: 35px;
+
+        display: flex;
         position: absolute;
-        text-align: center;
+        width: 50%;
+        height: 50%;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
     }
+
+    .four_content {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .fiveImg {
+        margin: 0px;
+        padding: 0px;
+        width: 420px;
+        position: absolute;
+    }
+
+
+
     </style>
 
     <script>
@@ -131,32 +184,55 @@
 
         <div style="position: relative;">
             <div class="img_container" style="top: -170px; left: 20%;">
-                <img src="Img/dogShelter1.png" width="50%" height="50%">
+                <div class="theCard">
+                    <div class="theFront">
+                        <img src="Img/dogShelter1.png">
+                    </div>
+                    <div class="theBack">
+                        <img src="Img/dogShelter2.png">
+                    </div> 
+                 </div>
             </div>
             <div class="txt_container" style="top: 60px; left: 20%; margin-left: -30px;">
-                <p>유기견 보호소</p>
+                <span class="title">유기견 보호소</span> <br><br>
                 <span>
                     유기견에 대한 정보를 알려주고, 유기견 발견 시 안내 사항과 가까운 동물병원을 찾아볼 수 있습니다.
                 <span>
             </div>
     
-            <div class="img_container" style="top: -170px; left: 45%;">
-                <img src="Img/dogBook1.png" width="50%" height="50%">
+            <div class="img_container" style="top: -170px; left: 45%; ">
+                <div class="theCard">
+                    <div class="theFront" style="margin-top: 45px;">
+                        <img src="Img/dogBook1.png">
+                    </div>
+                    <div class="theBack" style="margin-top: 45px;">
+                        <img src="Img/dogBook2.png">
+                    </div> 
+                 </div>
+                
             </div>
             <div class="txt_container" style="top: 60px; left: 45%; margin-left: -30px;">
-                <p>입양 절차</p>
+                <span class="title">입양 절차</span> <br><br>
                 <span>
                     유기견의 입양 절차를 안내하고, 유기견을 입양하기 위한 반려동물 자격증 시스템이 있습니다.
                 </span>
             </div>
     
             <div class="img_container" style="top: -170px; left: 70%;">
-                <img src="Img/Adoption1.png" width="50%" height="50%">
+                <div class="theCard">
+                    <div class="theFront" style="margin-top: 45px;">
+                        <img src="Img/Adoption1.png">
+                    </div>
+                    <div class="theBack" style="margin-top: 45px;">
+                        <img src="Img/Adoption2.png">
+                    </div> 
+                 </div>
+               
             </div>
             <div class="txt_container" style="top: 60px; left: 70%; margin-left: -30px;">
-                <p>
+                <span class="title"> 
                     강아지 북
-                </p>
+                </span><br><br>
                 <span>
                     반려동물을 키우기 위해 필요한 정보들을 볼 수 있습니다.
                 </span>
@@ -168,28 +244,34 @@
     <div id="four" style="background-color: #E3E3E3;">
         <div style="position: relative;">
             <div style="padding: 70px;">
-                <p style="font-size: 50px;">나를 버리지 말아주세요.</p>
+                <p style="font-size: 50px;">사지 말고 입양하세요.</p>
                 <hr>
         
-                <br><br><br>
-                <p>우리는 이미 한 번 이상 상처를 입은 존재입니다.</p>
-                <p>무책임한 사람들의 단순 변심으로 인해 우리들은 늘어나고 있습니다.</p>
-                <p>사랑으로 치유해주세요. 우리는 기쁨과 슬픔이란 감정을 느낍니다.</p>
-                <p>사지말고, 입양하세요. 사랑해주세요.</p>
-                <br>
-                <br>
-    
-                <p style="font-size: 50px;">Please don't abandon me.</p>
-                <p>We've already been hurt more than once.</p>
-                <p>We are increasing because of the simple change of heart of irresponsible people..</p>
-                <p>Please heal us with love. We feel the feeling of joy and sadness.</p>
-                <p>Don't buy it, adopt it. Please love us.</p>
+                <br><br><br><br>
+                <span class="four_content">이 아이들은 필요 없어진 쓰레기처럼 주인에게 버려집니다. "피부병", "관리비용",</span> <br>
+                <span class="four_content">"단순변심"으로 인해 버림을 받습니다. 반려동물을 버리는 사람들은 이들도</span><br>
+                <span class="four_content">하나의 생명이라는 사실을 전혀 인지를 못합니다. 매년 여름 휴가철만 되면,</span><br>
+                <span class="four_content">바닷가 섬마을에 휴가를 즐기러 왔다가 반려견만 버리고 가는 사례가 심상치</span><br>
+                <span class="four_content">않게 발생하고 있습니다. 이 아이들은 얼마나 상처를 입었을까요.</span><br><br><br>
+                <span class="four_content">전국에 동물보호센터는 약 280여 곳이 있습니다. 규모는 제한적인데 입소하는</span><br>
+                <span class="four_content">유기견은 늘고 있습니다. 수용이 어려워 안락사 문제도 일어나고 있습니다. </span><br>
+                <span class="four_content">반려동물을 상품이 아닌 가족으로 생각해야 하는 인식의 변화가 가장 필요합니다.</span><br>
+                
             
-                <video controls autoplay width="50%" muted loop style="float:left; margin-left: 800px; margin-top: -450px;">
+                <video controls autoplay width="910px" muted loop style="position: absolute; left: 900px; top: 250px;">
                     <source src="video/video.mp4"
                             type="video/mp4">
             </div>
         </div>
+    </div>
+
+    <div id="five" style="position: relative;">
+        <img class="fiveImg" src="Img/giveThemLove_Dog4.jpg" style="left: 0px;">
+        <img class="fiveImg" src="Img/giveThemLove_Dog3.jpg" style="right: 0px; bottom: 0px;">
+        <div style="position: absolute; text-align: center; width: 100%; top: 35%;">
+            <span style="font-size: 100px;">DOGS Give Them Love.</span>
+        </div>
+        
     </div>
 
     <script>
