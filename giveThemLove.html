@@ -16,6 +16,147 @@
     <title>Document</title>
 
     <style>
+   
+    li {
+        list-style-type: none;
+    }
+
+    input[id="menuicon"] {
+        display: none;
+    }
+
+    input[id="menuicon"] + label {
+        display: block;
+        width: 21px;
+        height: 21px;
+        z-index: 999999;
+        position: fixed;
+        right: 30px;
+        top: 30px;
+        cursor: pointer;
+    }
+
+    input[id="menuicon"] + label span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        border-radius: 30px;
+        background-color: #000;
+        transition: all 0.4s;
+    }
+
+    input[id="menuicon"] + label span:nth-child(1) {
+        top: 0;
+    }
+
+    input[id="menuicon"] + label span:nth-child(2) {
+        bottom: 40%;
+    }
+
+    input[id="menuicon"]:checked+label span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%);
+        transform: rotate(45deg);
+    }
+
+    input[id="menuicon"]:checked+label span:nth-child(2) {
+        top: 50%;
+        transform: translateY(50%);
+        transform: rotate(-45deg);
+    }
+
+    input[id="menuicon"]:checked+label+nav {
+        top: 0;
+    }
+
+    div[class="sidemenu"]{
+        width:400px;
+        height:100%;
+        background:#FFFFFF;
+        position:fixed;
+        top:0;
+        right:-400px;
+        z-index:2;
+        transition:all .35s;
+    }
+
+    input[id="menuicon"]:checked + label + div{
+        right:0;
+    }
+
+    input[id="menuicon"]:checked+label{
+        z-index:3;
+        right:430px;
+        transition:all .35s;
+        cursor:pointer;
+    }
+
+    .sidemenu_title{
+        padding-top:30px;
+        display:flex;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .sidemenu_link{
+        display: none;
+        padding-bottom : 30px;
+    }
+
+    .sidemenu_button {
+        font-size: 19px;
+        padding: 30px 0;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    [id$="-toggle"] {
+        margin-right: 15px;
+    }
+
+    .sidemenu_a{
+        line-height: 2;
+        padding-left: 20px;
+        animation: fadein 0.8s;
+    }
+
+    a { text-decoration: none; color: black; }
+        a:visited { text-decoration: none; }
+        a:hover { text-decoration: none; }
+        a:focus { text-decoration: none; }
+        a:hover, a:active { text-decoration: none; }
+
+    @keyframes fadein {
+        from {
+        opacity: 0;
+        }
+        to {
+        opacity: 1;
+        }
+    }
+
+    .sidemenu{
+        position: relative;
+    }
+
+    .sidemenu_footer{
+        position:absolute;
+        bottom: 0;
+        left:50%;
+        transform: translateX(-50%);
+    }
+
+    .sidemenu_content{
+        padding-left:30px;
+    }
+
+
+    /*  --  */
     .title {
         font-weight: bold; 
         font-size: 23px;
@@ -133,6 +274,68 @@
 </head>
 
 <body style="overflow-x: hidden;">
+    <input type="checkbox" id="menuicon">  
+    <label for="menuicon">  
+      <span></span>  
+      <span></span>
+    </label>
+    <div class="sidemenu">
+      <div class="sidemenu_title">Contents</div>
+      <br>
+      <hr width="200px" align="center">
+      <div class="sidemenu_content">
+        <button class="sidemenu_button" id="btn-1"><span id="btn-1-toggle">+</span><span>동물 보호 시설</span></button>
+        <div class="sidemenu_link" id= "link-1">
+          <a href="#"><span class="sidemenu_a">- 보호중인 유기견</span></a>
+          <br>
+          <a href="#"><span class="sidemenu_a">- 습득 시 안내</span></a>
+          <br>
+          <a href="#"><span class="sidemenu_a">- 동물 병원 안내</span></a>
+        </div>
+      </div>
+      <div class="sidemenu_content">
+        <button class="sidemenu_button" id="btn-2"><span id="btn-2-toggle">+</span><span>입양 절차</span></button>
+        <div class="sidemenu_link" id="link-2">
+          <a href="#"><span class="sidemenu_a">- 반려견 자격증</span></a>
+          <br>
+          <a href="#"><span class="sidemenu_a">- 동물 등록</span></a>
+        </div>
+        
+      </div>
+      <div class="sidemenu_content">
+        <button class="sidemenu_button" id="btn-3"><span id="btn-3-toggle">+</span><span>펫 가이드</span></button>
+        <div class="sidemenu_link" id="link-3">
+          <a href="#"><span class="sidemenu_a">- 강아지를 부탁해</span></a>
+        </div>
+      
+      </div>
+      <div class="sidemenu_footer">
+        <span>MBCOE</span>
+        <br>
+        <br>
+      </div>
+    </div>
+
+    <script>
+    const items = document.querySelectorAll('.sidemenu_button');
+
+    function openCloseToggle(){
+    const a = this.id.replace('btn', 'link');
+
+    if(document.getElementById(a).style.display === 'block'){
+        document.getElementById(a).style.display = 'none';
+        document.getElementById(this.id + '-toggle').textContent = '+';
+    } else{
+        document.getElementById(a).style.display = 'block';
+        document.getElementById(this.id + '-toggle').textContent = '-';
+    }
+    }
+
+    items.forEach(item => item.addEventListener('click', openCloseToggle));
+    </script>
+
+
+
     <div id="one">
         <img class="dogImg" src="Img/giveThemLove_Dog.jpg" style="opacity: 0.7;">
         <div id="txtA">
