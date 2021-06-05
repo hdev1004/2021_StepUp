@@ -22,6 +22,7 @@
     }
 
     input[id="menuicon"] {
+        z-index: 999999;
         display: none;
     }
 
@@ -207,7 +208,6 @@
     .img_container {
         position: absolute;
         margin-top: 0px;
-        z-index: 1000;
         width: 200px; 
         height: 200px; 
     }
@@ -262,7 +262,10 @@
         position: absolute;
     }
 
-
+    
+    div.menuContainer * {
+        margin:0;
+    }
 
     </style>
 
@@ -274,47 +277,194 @@
 </head>
 
 <body style="overflow-x: hidden;">
-    <input type="checkbox" id="menuicon">  
-    <label for="menuicon">  
-      <span></span>  
-      <span></span>
-    </label>
-    <div class="sidemenu">
-      <div class="sidemenu_title">Contents</div>
-      <br>
-      <hr width="200px" align="center">
-      <div class="sidemenu_content">
-        <button class="sidemenu_button" id="btn-1"><span id="btn-1-toggle">+</span><span>동물 보호 시설</span></button>
-        <div class="sidemenu_link" id= "link-1">
-          <a href="#"><span class="sidemenu_a">- 보호중인 유기견</span></a>
-          <br>
-          <a href="#"><span class="sidemenu_a">- 습득 시 안내</span></a>
-          <br>
-          <a href="#"><span class="sidemenu_a">- 동물 병원 안내</span></a>
+    <div id="pageContainer">
+        <div id="one">
+            <img class="dogImg" src="Img/giveThemLove_Dog.jpg" style="opacity: 0.7;">
+            <div id="txtA">
+                <p class="t1">Give Them Love. </p>
+                <p class="t2">Animals are such agreeable friends. </p>
+            </div>
+    
+            <section id="section10" class="demo">
+                <a id="moveOne" href="#one"></a>
+                <a id="moveTwo" href="#two"><span style="left: 500px;"></span></a>
+                <a id="moveThree" href="#three"></a>
+              </section>
         </div>
-      </div>
-      <div class="sidemenu_content">
-        <button class="sidemenu_button" id="btn-2"><span id="btn-2-toggle">+</span><span>입양 절차</span></button>
-        <div class="sidemenu_link" id="link-2">
-          <a href="#"><span class="sidemenu_a">- 반려견 자격증</span></a>
-          <br>
-          <a href="#"><span class="sidemenu_a">- 동물 등록</span></a>
+    
+        <div id="two">
+            <div class="box">
+                <div class="grayBox"></div>
+                <div class="pinkBox">
+                    <div style="position: absolute; left: 200px; top: 40px;" class="number">2016</div>
+                    <div style="position: absolute; left: 350px; top: 30px;" class="number">2017</div>
+                    <div style="position: absolute; left: 500px; top: 30px;" class="number">2018</div>
+                    <div style="position: absolute; left: 650px; top: 30px;" class="number">2019</div>
+                    <div style="position: absolute; left: 800px; top: 30px;" class="number">2020</div>
+    
+                    <div style="position: absolute; left: 190px; top: 80px; color: white;" class="number">88,531</div>
+                    <div style="position: absolute; left: 335px; top: 80px; color: white;" class="number">100,840</div>
+                    <div style="position: absolute; left: 485px; top: 80px; color: white;" class="number">118,710</div>
+                    <div style="position: absolute; left: 635px; top: 80px; color: white;" class="number">133,504</div>
+                    <div style="position: absolute; left: 785px; top: 80px; color: white;" class="number">128,719</div>
+                    
+                </div>
+                <div class="graphBox" style="padding-left: 50px; padding-right: 50px;">
+                    <canvas id="myChart" style="position: relative; top: 120px;"></canvas>
+                </div>
+            </div>
+    
+            <div id="txtB">
+                <b class="t3">개는 물건이 아닌 생명입니다.</b>
+                <p class="t4">매년 10만마리 이상의 유기견들이 버려집니다.</p>
+                <p class="t5">이 중 20% 미만이 새로운 보호자를 만나고,</p>
+                <p class="t6">20일 안에 입양을 보내지 못하면 안락사를 당합니다.</p>
+            </div>
+    
         </div>
+    
+    
+        <div id="three">
+            <img src="Img/giveThemLove_Dog2.jpg" style="z-index: 10;" width="100%" height="50%">
+    
+            <div style="position: relative;">
+                <div class="img_container" style="top: -170px; left: 20%;">
+                    <div class="theCard">
+                        <div class="theFront">
+                            <img src="Img/dogShelter1.png">
+                        </div>
+                        <div class="theBack">
+                            <img src="Img/dogShelter2.png">
+                        </div> 
+                     </div>
+                </div>
+                <div class="txt_container" style="top: 60px; left: 20%; margin-left: -30px;">
+                    <span class="title">유기견 보호소</span> <br><br>
+                    <span>
+                        유기견에 대한 정보를 알려주고, 유기견 발견 시 안내 사항과 가까운 동물병원을 찾아볼 수 있습니다.
+                    <span>
+                </div>
         
-      </div>
-      <div class="sidemenu_content">
-        <button class="sidemenu_button" id="btn-3"><span id="btn-3-toggle">+</span><span>펫 가이드</span></button>
-        <div class="sidemenu_link" id="link-3">
-          <a href="#"><span class="sidemenu_a">- 강아지를 부탁해</span></a>
+                <div class="img_container" style="top: -170px; left: 45%; ">
+                    <div class="theCard">
+                        <div class="theFront" style="margin-top: 45px;">
+                            <img src="Img/dogBook1.png">
+                        </div>
+                        <div class="theBack" style="margin-top: 45px;">
+                            <img src="Img/dogBook2.png">
+                        </div> 
+                     </div>
+                    
+                </div>
+                <div class="txt_container" style="top: 60px; left: 45%; margin-left: -30px;">
+                    <span class="title">입양 절차</span> <br><br>
+                    <span>
+                        유기견의 입양 절차를 안내하고, 유기견을 입양하기 위한 반려동물 자격증 시스템이 있습니다.
+                    </span>
+                </div>
+        
+                <div class="img_container" style="top: -170px; left: 70%;">
+                    <div class="theCard">
+                        <div class="theFront" style="margin-top: 45px;">
+                            <img src="Img/Adoption1.png">
+                        </div>
+                        <div class="theBack" style="margin-top: 45px;">
+                            <img src="Img/Adoption2.png">
+                        </div> 
+                     </div>
+                   
+                </div>
+                <div class="txt_container" style="top: 60px; left: 70%; margin-left: -30px;">
+                    <span class="title"> 
+                        강아지 북
+                    </span><br><br>
+                    <span>
+                        반려동물을 키우기 위해 필요한 정보들을 볼 수 있습니다.
+                    </span>
+                </div>
+            </div>
         </div>
-      
-      </div>
-      <div class="sidemenu_footer">
-        <span>MBCOE</span>
-        <br>
-        <br>
-      </div>
+    
+    
+        <div id="four" style="background-color: #E3E3E3;">
+            <div style="position: relative;">
+                <div style="padding: 70px;">
+                    <p style="font-size: 50px;">사지 말고 입양하세요.</p>
+                    <hr>
+            
+                    <br><br><br><br>
+                    <span class="four_content">이 아이들은 필요 없어진 쓰레기처럼 주인에게 버려집니다. "피부병", "관리비용",</span> <br>
+                    <span class="four_content">"단순변심"으로 인해 버림을 받습니다. 반려동물을 버리는 사람들은 이들도</span><br>
+                    <span class="four_content">하나의 생명이라는 사실을 전혀 인지를 못합니다. 매년 여름 휴가철만 되면,</span><br>
+                    <span class="four_content">바닷가 섬마을에 휴가를 즐기러 왔다가 반려견만 버리고 가는 사례가 심상치</span><br>
+                    <span class="four_content">않게 발생하고 있습니다. 이 아이들은 얼마나 상처를 입었을까요.</span><br><br><br>
+                    <span class="four_content">전국에 동물보호센터는 약 280여 곳이 있습니다. 규모는 제한적인데 입소하는</span><br>
+                    <span class="four_content">유기견은 늘고 있습니다. 수용이 어려워 안락사 문제도 일어나고 있습니다. </span><br>
+                    <span class="four_content">반려동물을 상품이 아닌 가족으로 생각해야 하는 인식의 변화가 가장 필요합니다.</span><br>
+                    
+                
+                    <video controls autoplay width="910px" muted loop style="position: absolute; left: 900px; top: 250px;">
+                        <source src="video/video1.mp4"
+                                type="video/mp4">
+                </div>
+            </div>
+        </div>
+    
+        <div id="five" style="position: relative;">
+            <img class="fiveImg" src="Img/giveThemLove_Dog4.jpg" style="left: 0px;">
+            <img class="fiveImg" src="Img/giveThemLove_Dog3.jpg" style="right: 0px; bottom: 0px;">
+            <div style="position: absolute; text-align: center; width: 100%; top: 35%;">
+                <span style="font-size: 100px;">DOGS Give Them Love.</span>
+            </div>
+            
+        </div>
     </div>
+    
+
+    <div class="menuContainer" >
+        <input type="checkbox" id="menuicon">  
+        <label for="menuicon">  
+          <span></span>  
+          <span></span>
+        </label>
+        <div class="sidemenu" style="z-index: 10000;">
+          <div class="sidemenu_title">Contents</div>
+          <br>
+          <hr width="200px" align="center">
+          <div class="sidemenu_content">
+            <button class="sidemenu_button" id="btn-1"><span id="btn-1-toggle">+</span><span>동물 보호 시설</span></button>
+            <div class="sidemenu_link" id= "link-1">
+              <a href="#"><span class="sidemenu_a">- 보호중인 유기견</span></a>
+              <br>
+              <a href="#"><span class="sidemenu_a">- 습득 시 안내</span></a>
+              <br>
+              <a href="#"><span class="sidemenu_a">- 동물 병원 안내</span></a>
+            </div>
+          </div>
+          <div class="sidemenu_content">
+            <button class="sidemenu_button" id="btn-2"><span id="btn-2-toggle">+</span><span>입양 절차</span></button>
+            <div class="sidemenu_link" id="link-2">
+              <a href="#"><span class="sidemenu_a">- 반려견 자격증</span></a>
+              <br>
+              <a href="#"><span class="sidemenu_a">- 동물 등록</span></a>
+            </div>
+            
+          </div>
+          <div class="sidemenu_content">
+            <button class="sidemenu_button" id="btn-3"><span id="btn-3-toggle">+</span><span>펫 가이드</span></button>
+            <div class="sidemenu_link" id="link-3">
+              <a href="#"><span class="sidemenu_a">- 강아지를 부탁해</span></a>
+            </div>
+          
+          </div>
+          <div class="sidemenu_footer">
+            <span>MBCOE</span>
+            <br>
+            <br>
+          </div>
+        </div>
+    </div>
+   
 
     <script>
     const items = document.querySelectorAll('.sidemenu_button');
@@ -334,148 +484,6 @@
     items.forEach(item => item.addEventListener('click', openCloseToggle));
     </script>
 
-
-
-    <div id="one">
-        <img class="dogImg" src="Img/giveThemLove_Dog.jpg" style="opacity: 0.7;">
-        <div id="txtA">
-            <p class="t1">Give Them Love. </p>
-            <p class="t2">Animals are such agreeable friends. </p>
-        </div>
-
-        <section id="section10" class="demo">
-            <a id="moveOne" href="#one"></a>
-            <a id="moveTwo" href="#two"><span style="left: 500px;"></span></a>
-            <a id="moveThree" href="#three"></a>
-          </section>
-    </div>
-
-    <div id="two">
-        <div class="box">
-            <div class="grayBox"></div>
-            <div class="pinkBox">
-                <div style="position: absolute; left: 200px; top: 40px;" class="number">2016</div>
-                <div style="position: absolute; left: 350px; top: 30px;" class="number">2017</div>
-                <div style="position: absolute; left: 500px; top: 30px;" class="number">2018</div>
-                <div style="position: absolute; left: 650px; top: 30px;" class="number">2019</div>
-                <div style="position: absolute; left: 800px; top: 30px;" class="number">2020</div>
-
-                <div style="position: absolute; left: 190px; top: 80px; color: white;" class="number">88,531</div>
-                <div style="position: absolute; left: 335px; top: 80px; color: white;" class="number">100,840</div>
-                <div style="position: absolute; left: 485px; top: 80px; color: white;" class="number">118,710</div>
-                <div style="position: absolute; left: 635px; top: 80px; color: white;" class="number">133,504</div>
-                <div style="position: absolute; left: 785px; top: 80px; color: white;" class="number">128,719</div>
-                
-            </div>
-            <div class="graphBox" style="padding-left: 50px; padding-right: 50px;">
-                <canvas id="myChart" style="position: relative; top: 120px;"></canvas>
-            </div>
-        </div>
-
-        <div id="txtB">
-            <b class="t3">개는 물건이 아닌 생명입니다.</b>
-            <p class="t4">매년 10만마리 이상의 유기견들이 버려집니다.</p>
-            <p class="t5">이 중 20% 미만이 새로운 보호자를 만나고,</p>
-            <p class="t6">20일 안에 입양을 보내지 못하면 안락사를 당합니다.</p>
-        </div>
-
-    </div>
-
-
-    <div id="three">
-        <img src="Img/giveThemLove_Dog2.jpg" style="z-index: 10;" width="100%" height="50%">
-
-        <div style="position: relative;">
-            <div class="img_container" style="top: -170px; left: 20%;">
-                <div class="theCard">
-                    <div class="theFront">
-                        <img src="Img/dogShelter1.png">
-                    </div>
-                    <div class="theBack">
-                        <img src="Img/dogShelter2.png">
-                    </div> 
-                 </div>
-            </div>
-            <div class="txt_container" style="top: 60px; left: 20%; margin-left: -30px;">
-                <span class="title">유기견 보호소</span> <br><br>
-                <span>
-                    유기견에 대한 정보를 알려주고, 유기견 발견 시 안내 사항과 가까운 동물병원을 찾아볼 수 있습니다.
-                <span>
-            </div>
-    
-            <div class="img_container" style="top: -170px; left: 45%; ">
-                <div class="theCard">
-                    <div class="theFront" style="margin-top: 45px;">
-                        <img src="Img/dogBook1.png">
-                    </div>
-                    <div class="theBack" style="margin-top: 45px;">
-                        <img src="Img/dogBook2.png">
-                    </div> 
-                 </div>
-                
-            </div>
-            <div class="txt_container" style="top: 60px; left: 45%; margin-left: -30px;">
-                <span class="title">입양 절차</span> <br><br>
-                <span>
-                    유기견의 입양 절차를 안내하고, 유기견을 입양하기 위한 반려동물 자격증 시스템이 있습니다.
-                </span>
-            </div>
-    
-            <div class="img_container" style="top: -170px; left: 70%;">
-                <div class="theCard">
-                    <div class="theFront" style="margin-top: 45px;">
-                        <img src="Img/Adoption1.png">
-                    </div>
-                    <div class="theBack" style="margin-top: 45px;">
-                        <img src="Img/Adoption2.png">
-                    </div> 
-                 </div>
-               
-            </div>
-            <div class="txt_container" style="top: 60px; left: 70%; margin-left: -30px;">
-                <span class="title"> 
-                    강아지 북
-                </span><br><br>
-                <span>
-                    반려동물을 키우기 위해 필요한 정보들을 볼 수 있습니다.
-                </span>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="four" style="background-color: #E3E3E3;">
-        <div style="position: relative;">
-            <div style="padding: 70px;">
-                <p style="font-size: 50px;">사지 말고 입양하세요.</p>
-                <hr>
-        
-                <br><br><br><br>
-                <span class="four_content">이 아이들은 필요 없어진 쓰레기처럼 주인에게 버려집니다. "피부병", "관리비용",</span> <br>
-                <span class="four_content">"단순변심"으로 인해 버림을 받습니다. 반려동물을 버리는 사람들은 이들도</span><br>
-                <span class="four_content">하나의 생명이라는 사실을 전혀 인지를 못합니다. 매년 여름 휴가철만 되면,</span><br>
-                <span class="four_content">바닷가 섬마을에 휴가를 즐기러 왔다가 반려견만 버리고 가는 사례가 심상치</span><br>
-                <span class="four_content">않게 발생하고 있습니다. 이 아이들은 얼마나 상처를 입었을까요.</span><br><br><br>
-                <span class="four_content">전국에 동물보호센터는 약 280여 곳이 있습니다. 규모는 제한적인데 입소하는</span><br>
-                <span class="four_content">유기견은 늘고 있습니다. 수용이 어려워 안락사 문제도 일어나고 있습니다. </span><br>
-                <span class="four_content">반려동물을 상품이 아닌 가족으로 생각해야 하는 인식의 변화가 가장 필요합니다.</span><br>
-                
-            
-                <video controls autoplay width="910px" muted loop style="position: absolute; left: 900px; top: 250px;">
-                    <source src="video/video1.mp4"
-                            type="video/mp4">
-            </div>
-        </div>
-    </div>
-
-    <div id="five" style="position: relative;">
-        <img class="fiveImg" src="Img/giveThemLove_Dog4.jpg" style="left: 0px;">
-        <img class="fiveImg" src="Img/giveThemLove_Dog3.jpg" style="right: 0px; bottom: 0px;">
-        <div style="position: absolute; text-align: center; width: 100%; top: 35%;">
-            <span style="font-size: 100px;">DOGS Give Them Love.</span>
-        </div>
-        
-    </div>
 
     <script>
         /* Charts */
@@ -516,6 +524,8 @@
         });
         }
         
+        
+
         /* Charts */
 
 
