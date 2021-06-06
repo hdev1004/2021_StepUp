@@ -35,7 +35,7 @@ function Counter(obj){
   
   $(document).ready(function(){
     $('.number').each(function(){
-        Counter($(this));
+        //Counter($(this));
       });
   });
   
