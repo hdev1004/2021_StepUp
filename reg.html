@@ -64,12 +64,12 @@
   }
   
   div[class="sidemenu"]{
-    width:300px;
+    width:400px;
     height:100%;
     background:white;
     position:fixed;
     top:0;
-    right:-300px;
+    right:-400px;
     z-index:1;
     transition:all .35s;
   }
@@ -80,7 +80,7 @@
   
   input[id="menuicon"]:checked+label{
     z-index:2;
-    right:330px;
+    right:430px;
     transition:all .35s;
     cursor:pointer;
   }
@@ -164,36 +164,31 @@ body{
     <div class="sidemenu">
       <div class="sidemenu_title">Contents</div>
       <br>
-      <hr>
+      <hr width="70%" style="margin:0 auto;">
       <div class="sidemenu_content">
         <button class="sidemenu_button" id="btn-1"><span id="btn-1-toggle">+</span><span style="font-family:'GmarketSansMedium'";>동물 보호 시설</span></button>
         <div class="sidemenu_link" id= "link-1">
-          <a href="#"><span class="sidemenu_a">- 습득 시 안내</span></a>
+          <a href="#"><span class="sidemenu_a">- 보호중인 유기견</span></a>
+          <br>
+          <a href="./place.html"><span class="sidemenu_a">- 습득 시 안내</span></a>
           <br>
           <a href="#"><span class="sidemenu_a">- 동물 병원 안내</span></a>
         </div>
       </div>
       <div class="sidemenu_content">
-        <button class="sidemenu_button" id="btn-2"><span id="btn-2-toggle">+</span><span style="font-family:'GmarketSansMedium'";>분양 절차</span></button>
+        <button class="sidemenu_button" id="btn-2"><span id="btn-2-toggle">+</span><span style="font-family:'GmarketSansMedium'";>입양 절차</span></button>
         <div class="sidemenu_link" id="link-2">
-          <a href="#"><span class="sidemenu_a">- 자가 진단</span></a>
+          <a href="./test0.html"><span class="sidemenu_a">- 반려견 자격증</span></a>
           <br>
-          <a href="#"><span class="sidemenu_a">- 건강 검진</span></a>
-          <br>
-          <a href="#"><span class="sidemenu_a">- 동물 등록</span></a>
+          <a href="./reg.html"><span class="sidemenu_a">- 동물 등록</span></a>
         </div>
         
       </div>
       <div class="sidemenu_content">
-        <button class="sidemenu_button" id="btn-3"><span id="btn-3-toggle">+</span><span style="font-family:'GmarketSansMedium'";>동물 보호 시설</span></button>
+        <button class="sidemenu_button" id="btn-3"><span id="btn-3-toggle">+</span><span style="font-family:'GmarketSansMedium'";>펫 가이드</span></button>
         <div class="sidemenu_link" id="link-3">
-          <a href="#"><span class="sidemenu_a">- 강아지 장점 소개</span></a>
-          <br>
-          <a href="#"><span class="sidemenu_a">- 강아지 교육</span></a>
-          <br>
-          <a href="#"><span class="sidemenu_a">- 강아지와 교감</span></a>
+          <a href="./guidebook.html"><span class="sidemenu_a">- 강아지를 부탁해</span></a>
         </div>
-      
       </div>
       <div class="sidemenu_footer">
         <span>MBCOE</span>
