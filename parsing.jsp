@@ -58,7 +58,7 @@ public String myFormat(String str) {
             position: relative;
     		width:450px;
     		height:200px;
-            border: 3px solid black;
+            border: 1px solid black;
     		
     	}
     	
@@ -68,7 +68,7 @@ public String myFormat(String str) {
     		height: 120px;
             left: 20px;
             top: 40px;
-            border: 3px solid black;
+            border: 1px solid black;
     	}
 
         div.cards_txt {
